@@ -6,8 +6,8 @@
     --comment-border-radius: 0px;
     --comment-font-size: 40px;
     --author-color: #222;
-    --author-bg-color: #ffa500;
-    --author-avatar-border-color: #ffa500;
+    --author-bg-color: hsl(219, 100%, 50%);
+    --author-avatar-border-color: transparent;
     --author-border-radius: 0px;
     --author-avatar-border-size: 3px;
     --author-font-size: 30px;
@@ -243,4 +243,8 @@ yt-live-chat-text-message-renderer[is-deleted],
 yt-live-chat-paid-message-renderer[is-deleted],
 yt-live-chat-membership-item-renderer[is-deleted] {
     cursor: default;
+}
+
+.chat{
+    bottom:350px !important;
 }
