@@ -146,7 +146,7 @@ $("body").on("click", ".btn-clear", function () {
 
 
 
-$( "yt-live-chat-app, div.chat" ).before( '<highlight-chat></highlight-chat><button class="btn-clear">CLEAR</button>' );
+$( "yt-live-chat-app, div.chat" ).before( '<highlight-chat></highlight-chat><button class="btn-clear">CLEAR</button><a href="'+ chrome.runtime.getURL('settings/options.html')+'" data-featherlight="iframe" data-featherlight-iframe-height="640" data-featherlight-iframe-width="480" id="go-to-options">options</a>' );
 
 // Show a placeholder message so you can position the window before the chat is live
 $(function(){
@@ -160,10 +160,12 @@ $(function(){
 });
 
 // Restore settings
+function restoreSettings(){
+
 
 var properties = ["color","authorBackgroundColor","authorColor","commentBackgroundColor","commentColor","fontFamily"];
 chrome.storage.sync.get(properties, function(item){
-  var color = "#000";
+  var color = "#000000";
   if(item.color) {
     color = item.color;
   }
@@ -188,7 +190,8 @@ chrome.storage.sync.get(properties, function(item){
     root.style.setProperty("--font-family", item.fontFamily);
   }
 });
-
+}
+restoreSettings();
 
 $("#primary-content").append('<span style="font-size: 0.7em">Aspect Ratio: <span id="aspect-ratio"></span></span>');
 
@@ -200,3 +203,8 @@ function displayAspectRatio() {
 displayAspectRatio();
 window.onresize = displayAspectRatio;
 
+$(function(){
+  $.featherlight.defaults.afterClose = function(){
+    restoreSettings();
+  }
+})
