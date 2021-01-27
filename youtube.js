@@ -1,4 +1,10 @@
 var useFullName = false;  //global variable for using the full name of user or just first name.
+var replaceAnonymous = true; //global variable to replace anonymous users.
+var anonymousUsers = "EmptyUsername" //global variable of comma seprated usernames that will be replaced
+var replaceAnonymousWith = "" //global variable of what any anonymous users will be replaced with
+/**
+ * binding for youtube chat message click
+ */
 $("body").unbind("click").on("click", "yt-live-chat-text-message-renderer,yt-live-chat-paid-message-renderer,yt-live-chat-membership-item-renderer", function () {
 
   // Don't show deleted messages
@@ -74,7 +80,11 @@ $("body").unbind("click").on("click", ".chat__message", function () {
 
   $(".hl-c-cont").remove();
   var chatname = $(this).find(".chat__message__username").text();
-
+  var anonUsers = anonymousUsers.split(",");
+  anonUsers.forEach(function(anon){
+    chatname = chatname.replace(new RegExp(anon,"i"), replaceAnonymousWith);
+  });
+  if(!useFullName) chatname = chatname.replace(/ .*/,'');
   // Show just the first name. Comment this out to show the full name.
   //chatname = chatname.replace(/ .*/,'');
 
@@ -191,6 +201,9 @@ chrome.storage.sync.get(properties, function(item){
     root.style.setProperty("--font-family", item.fontFamily);
   }
   useFullName = item.fullName;
+  replaceAnonymous = item.replaceAnonymous;
+  anonymousUsers = item.anonymousUsers;
+  replaceAnonymousWith = item.replaceAnonymousWith;
 });
 }
 restoreSettings();

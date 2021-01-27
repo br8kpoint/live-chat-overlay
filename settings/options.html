@@ -35,29 +35,29 @@
     <li>Dark Grey: #222</li>
     <li>White: #fff</li>
   </ul>
-
+  <p style="font-weight: bold;">Note: Make sure you hit the save button at the bottom to save changes!</p>
   <form>
     <div class="setting">
       <label>Background Color</label>
-      <input type="text" id="color">
+      <input type="color" id="color">
     </div>
     <hr>
     <div class="setting">
       <label>Author Background Color</label>
-      <input type="text" id="author-bg-color">
+      <input type="color" id="author-bg-color">
     </div>
     <div class="setting">
       <label>Author Text Color</label>
-      <input type="text" id="author-color">
+      <input type="color" id="author-color">
     </div>
     <hr>
     <div class="setting">
       <label>Chat Message Background Color</label>
-      <input type="text" id="comment-bg-color">
+      <input type="color" id="comment-bg-color">
     </div>
     <div class="setting">
       <label>Chat Message Text Color</label>
-      <input type="text" id="comment-color">
+      <input type="color" id="comment-color">
     </div>
     <hr>
     <div class="setting">
@@ -68,6 +68,22 @@
       <label>Use Full Name</label>
       <input type="checkbox" id="full-name" style="width:auto;">
     </div>
+    <fieldset>
+      <legend>Anonymous Users</legend>
+      <div class="setting">
+        <label>Replace Anonymous Users</label>
+        <input type="checkbox" id="replace-anonymous" style="width:auto;">
+      </div>
+      <div class="setting">
+        <label>Anonymous User</label>
+        <input type="text" id="anonymous-users">
+        <p>Enter comma seperated values of anonymous user names that will be replaced</p>
+      </div>
+      <div class="setting">
+        <label>Replace With</label>
+        <input type="text" id="replace-anonymous-with">
+      </div>
+    </fieldset>
     <button type="submit">Save</button>
   </form>
 
