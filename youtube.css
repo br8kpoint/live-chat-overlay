@@ -55,6 +55,17 @@ yt-live-chat-app {
     color: #fff;
     background: #444;
 }
+#go-to-options {
+    position: absolute;
+    z-index: 99999;
+    bottom: calc(30vh + 30px);
+    right: 20px;
+    font-size: 12px;
+    border: 1px #bbb solid;
+    border-radius: 4px;
+    color: #fff;
+    background: #444;
+}
 .show-comment {
     background-color: var(--shown-comment-bg-color) !important;
 }
