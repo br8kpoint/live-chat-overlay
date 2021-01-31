@@ -1,9 +1,10 @@
 Live Chat Overlay
 =================
 
-This CSS and JS turns the popout YouTube chat window into something that can be used to show chat comments keyed over a video.
+This CSS and JS turns the popout YouTube and Castr.io chat window into something that can be used to show chat comments keyed over a video.
 
 ![chat-screenshot](chat-screenshot.png)
+![castr-chat-screenshot](castr-chat-screenshot.png)
 
 [Setup Tutorial](https://youtu.be/HwctGtdsHZI)
 
