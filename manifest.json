@@ -12,8 +12,7 @@
     "https://www.youtube.com/*", 
     "https://studio.youtube.com/*",
      "https://chat.castr.io/room*", 
-     "storage", 
-     "tabs"
+     "storage"
   ],
   "content_scripts": [{
     "css": ["youtube.css", "lib/featherlight/featherlight.min.css" ],
